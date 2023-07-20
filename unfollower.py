@@ -27,8 +27,6 @@ class unfollower:
             self.linkList.append(self.followingList["href"])
             
             self.followingList = self.followingList["value"]
-            
-             
             self.f2.append(self.followingList)
         # print(self.f2)
             
