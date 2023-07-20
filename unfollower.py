@@ -20,23 +20,29 @@ class unfollower:
     def extractFollowing(self):
         self.f2 = []
         self.followingList = self.following["relationships_following"]
-        
+        self.linkList = []
         for i in self.followingList:
             self.followingList = i["string_list_data"]
             self.followingList = self.followingList[0]
+            self.linkList.append(self.followingList["href"])
+            
             self.followingList = self.followingList["value"]
+            
+             
             self.f2.append(self.followingList)
         # print(self.f2)
             
     def compare(self):
         notFollowingBack =[]
+        listLink =[]
     
         for i in range(len(self.f2)):
             if self.f2[i] not in self.f1:
                 notFollowingBack.append(self.f2[i]) 
+                listLink.append(self.linkList[i])
+        print("\nList of users who does not follow you back with a their profile link \n")
         for i in range(len(notFollowingBack)):    
-            print(notFollowingBack[i], " is not following you back")   
-
+            print(notFollowingBack[i], ", ",listLink[i] )   
 
 obj = unfollower()
 obj.loadJson()

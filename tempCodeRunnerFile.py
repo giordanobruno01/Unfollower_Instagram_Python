@@ -1,1 +1,1 @@
-lse:
+self.f1.append(self.followersDic)
