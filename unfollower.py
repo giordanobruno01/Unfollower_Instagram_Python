@@ -34,8 +34,8 @@ class unfollower:
         for i in range(len(self.f2)):
             if self.f2[i] not in self.f1:
                 notFollowingBack.append(self.f2[i]) 
-            
-        print(notFollowingBack)   
+        for i in range(len(notFollowingBack)):    
+            print(notFollowingBack[i], " is not following you back")   
 
 
 obj = unfollower()
